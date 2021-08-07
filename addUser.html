@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="js/select-ui.min.js"></script>
+<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+<script type="text/javascript">
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+  
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".select1").uedSelect({
+		width : 345			  
+	});
+	$(".select2").uedSelect({
+		width : 167  
+	});
+	$(".select3").uedSelect({
+		width : 100
+	});
+});
+</script>
+<script>
+    function checkusername()
+    {
+        var name = document.getElementById("username").value
+        var nameTip = document.getElementById("usernameTip")
+        var reg = /^[a-zA-Z]{1}[a-zA-Z0-p]{2-14}$/
+        if (reg.test(name))
+        {
+            nameTip.innerHTML = ""
+        }
+        else {
+            nameTip.innerHTML = "用户名不合法"
+            nameTip.style = "color:red"
+        }
+    }
+    function checkpassword()
+    {
+        var pass = document.getElementById("password").value
+        var passTip = document.getElementById("passwordTip")
+        var reg = /^[a-zA-Z]\w{5,17}$/
+        if (reg.test(pass))
+        {
+            passTip.innerHTML = ""
+        }
+        else
+        {
+            passTip.innerHTML = "密码不合法"
+            passTip.style = "color:red"
+        }
+    }
+    function checkrealname()
+    {
+        var real = document.getElementById("realname").value
+        var realTip = document.getElementById("realnameTip")
+        var reg = /^[\u4e00-\u9fa5]{2-5}$/
+        if (reg.test(real))
+        {
+            realTip.innerHTML = ""
+        }
+        else
+        {
+            realTip.innerHTML = "姓名不合法"
+            realTip.style = "color:red"
+        }
+    }
+    function checkfaculty()
+    {
+        var fac = document.getElementById("Faculty").value
+        var facTip = document.getElementById("FacultyTip")
+        var reg = /^[\u4e00-\u9fa5]{1,}$/
+        if (reg.test(fac))
+        {
+            facTip.innerHTML = ""
+        }
+        else {
+            facTip.innerHTML = "输入不合法"
+            facTip.style = "color:red"
+        }
+    }
+    function checkgrade()
+    {
+        var gar = document.getElementById("grade").value
+        var garTip = document.getElementById("gradeTip")
+        var reg = /^\d{1,5}$/
+        if (reg.test(gar))
+        {
+            garTip.innerHTML = ""
+        }
+        else {
+            garTip.innerHTML = "输入不合法"
+            garTip.style = "color:red"
+        }
+    }
+    function checkmajor()
+    {
+        var maj = document.getElementById("major").value
+        var majTip = document.getElementById("majorTip")
+        var reg = /^[\u4e00-\u9fa5]{1,}$/
+        if (reg.test(maj))
+        {
+            majTip.innerHTML = "";
+        }
+        else
+        {
+            majTip.innerHTML = "输入不合法"
+            majTip.style = "color:red"
+        }
+    }
+    function checkclass()
+    {
+        var cla = document.getElementById("class").value
+        var claTip = document.getElementById("classTip")
+        var reg = /^\d{1,5}$/
+        if (reg.test(cla))
+        {
+            claTip.innerHTML = "";
+        }
+        else
+        {
+            claTip.innerHTML = "输入不合法"
+            claTip.style = "color:red"
+        }
+    }
+    function checkphone()
+    {
+        var pho = document.getElementById("phone").value
+        var phoTip = document.getElementById("phoneTip")
+        var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/
+        if (reg.test(pho))
+        {
+            phoTip.innerHTML = ""
+        }
+        else
+        {
+            phoTip.innerHTML = "输入不合法"
+            phoTip.style = "color:red"
+        }
+    }
+    function checkQQ()
+    {
+        var Q = document.getElementById("QQ").value
+        var QTip = document.getElementById("QQTip")
+        var reg = /[1-9][0-9]{4,} /
+        if (reg.test(Q))
+        {
+            QTip.innerHTML = ""
+        }
+        else
+        {
+            QTip.innerHTML = "输入不合法"
+            QTip.style = "color:red"
+        }
+    }
+
+</script>
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">添加用户</a></li>
+    </ul>
+    </div>
+    
+    <div class="formbody">
+    
+    
+ 
+    
+  	<div id="tab1" class="tabson">    
+    <ul class="forminfo">
+    <li>
+      <label>用户名<b>*</b></label>
+      <input name="classid" type="text" class="dfinput" id = "username" placeholder="字母数字组合，字母开头，3-15个字符" onblur="checkusername()"  style="width:345px;"/>
+        <i id = "usernameTip"></i>
+    </li>
+	 <li>
+      <label>密码<b>*</b></label>
+      <input name="password" type="password" class="dfinput" onblur = "checkpassword()"  placeholder = "6-20个字符，由数字和字母构成，初始密码为123456"id="password"   style="width:345px;"/>
+         <i id="passwordTip"></i>
+    </li>
+     <li>
+       <label>角色<b>*</b></label><cite><input name="sex" type="radio" value="" checked="checked" />超级管理员&nbsp;&nbsp;&nbsp;&nbsp;<input name="sex" type="radio" value="" />管理员</cite></li>
+    <li>
+        <li>
+            <label>用户状态<b>*</b></label><cite><input name="state" type="radio" value="" checked="checked" />启用&nbsp;&nbsp;&nbsp;&nbsp;<input name="state" type="radio" value="" />禁用</cite>
+    </li>
+        <li>
+    <label>真实姓名<b>*</b></label><input name = "realname" onblur="checkrealname()" type = "text" id = "realname" class="dfinput" placeholder = "2-5个汉字">
+            <i id = "realnameTip"></i>
+    </li>
+        <li>
+            <label>院系<b>*</b></label><input name = "Faculty" type = "text" onblur = "checkfaculty()" id = "Faculty" class="dfinput" placeholder = "请输入院系名称">
+            <i id = "FacultyTip"></i>
+        </li>
+        <li>
+            <label>年级<b>*</b></label><input name = "grade" type = "text" onblur = "checkgrade()" id = "grade" class="dfinput" placeholder = "请输入年级">
+            <i id = "gradeTip"></i>
+        </li>
+        <li>
+            <label>专业<b>*</b></label><input name = "major" type = "text" onblur = "checkmajor()" id = "major" class="dfinput" placeholder = "请输入专业">
+            <i id = "majorTip"></i>
+        </li>
+        <li>
+            <label>班级<b>*</b></label><input name = "class" type = "text" onblur = "checkclass()" id = "class" class="dfinput" placeholder = "请输入班级">
+            <i id = "classTip"></i>
+        </li>
+        <li>
+            <label>校内职务*</label><input name = "position" type = "text" id = "position" class="dfinput" placeholder = "请输入班内职务（可选）">
+        </li>
+        <li>
+            <label>手机<b>*</b></label><input name = "phone" type = "text" onblur = "checkphone()" id = "phone" class="dfinput" placeholder = "请输入手机号">
+            <i id = "phoneTip"></i>
+        </li>
+        <li>
+            <label>QQ<b>*</b></label><input name = "QQ" type = "text" onblur = "checkQQ()" id = "QQ" class="dfinput" placeholder = "请输入QQ">
+            <i id = "QQTip"></i>
+        </li>
+
+    <li><label>通知内容<b>*</b></label>
+    
+
+    <textarea id="content7" name="content" style="width:700px;height:250px;visibility:hidden;"></textarea>
+    </li>
+    <li><label>&nbsp;</label><input name="" type="button" class="btn" value="马上发布"/></li>
+    </ul>
+    
+    </div> 
+    
+    
+  	<div id="tab2" class="tabson">
+    
+    
+    <ul class="seachform">
+    
+    <li><label>综合查询</label><input name="" type="text" class="scinput" /></li>
+    <li><label>指派</label>  
+    <div class="vocation">
+    <select class="select3">
+    <option>全部</option>
+    <option>其他</option>
+    </select>
+    </div>
+    </li>
+    
+    <li><label>重点客户</label>  
+    <div class="vocation">
+    <select class="select3">
+    <option>全部</option>
+    <option>其他</option>
+    </select>
+    </div>
+    </li>
+    
+    <li><label>客户状态</label>  
+    <div class="vocation">
+    <select class="select3">
+    <option>全部</option>
+    <option>其他</option>
+    </select>
+    </div>
+    </li>
+    
+    <li><label>&nbsp;</label><input name="" type="button" class="scbtn" value="查询"/></li>
+    
+    </ul>
+    
+    
+
+    
+   
+  
+    
+    </div>  
+       
+	</div> 
+ 
+	<script type="text/javascript"> 
+      $("#usual1 ul").idTabs(); 
+    </script>
+    
+    <script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+	</script>
+    
+    
+    
+    
+    
+    </div>
+
+
+</body>
+
+</html>
